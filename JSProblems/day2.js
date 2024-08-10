@@ -10,7 +10,7 @@ Write a javascript prog to create a new string from a given string taking the fi
 const makeNewString = (str) => 
     str.length >= 3 ? str.slice(0,3) + str.slice(-3) : str
 
-console.log(makeNewString("Avengers EndGame"));
+// console.log(makeNewString("Avengers EndGame"));
 
 
 /*
@@ -26,7 +26,7 @@ const firstHalfOfString = (str) => {
     return str.slice(0,(str.length)/2);
 }
 
-console.log(firstHalfOfString("Thanos"));
+// console.log(firstHalfOfString("Thanos"));
 
 
 /*
@@ -41,7 +41,7 @@ Write a javascript prog to concatenate two strings except their first character
 const conTwoStr = (str1,str2) =>  str1.slice(1) + str2.slice(1)
 
 
-console.log(conTwoStr("Thanos","Hulk"));
+// console.log(conTwoStr("Thanos","Hulk"));
 
 /*
 
@@ -59,8 +59,68 @@ const countChars = (str,char) =>
 const contains2To4 = (str,char) =>
     countChars(str,char) >=2 && countChars(str,char)<=4 ;
 
-console.log(contains2To4("hi",'i'));
-console.log(contains2To4("Goodbye",'o'));
-console.log(contains2To4("Fasterrrr",'r'));
+// console.log(contains2To4("hi",'i'));
+// console.log(contains2To4("Goodbye",'o'));
+// console.log(contains2To4("Fasterrrr",'r'));
 
 
+// Part 3
+
+
+
+/*
+
+Excercise 1:
+------------
+
+Write a javascript prog to find the number of even digits in a array of integers
+
+*/
+
+const countEvenInArray = (arr) =>{
+    return arr.filter((item) => item = item % 2 === 0).length
+}
+
+const arrEx = [1, 2, 3, 4 , 5, 6, 8]
+
+// console.log(arrEx);
+// console.log(countEvenInArray(arrEx));
+
+const countEvenInArrayUptoN = (arr, n) =>{
+    return arr.filter((item) => (item % 2 === 0) && item<=n).length
+}
+
+console.log(countEvenInArrayUptoN(arrEx,6));
+
+
+/*
+
+Excercise 3:
+------------
+
+Write a javascript prog to get the largest even number from an array of integers
+
+*/
+
+const largestEvenInArray = (arr) => 
+    Math.max(...arr.filter(num => num%2 ===0))
+
+console.log(largestEvenInArray(arrEx));
+
+
+
+/*
+
+Excercise 4:
+------------
+
+Write a javascript prog to replace the first digit in a string with $ character. 
+
+*/
+
+const replaceFirstDigitBy$ = (str) => str.replace(/[0-9]/, '$') 
+
+// const replaceFirstDigitBy$ = (str) => str.replace(/[\d]/, '$') 
+
+
+// Using REGEX
